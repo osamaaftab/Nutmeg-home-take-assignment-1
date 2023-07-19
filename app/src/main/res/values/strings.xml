@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Nutmeg</string>
+    <!--
+        https://github.com/square/leakcanary/issues/2380
+        Issue with the leak canary and junit
+    -->
+    <string name="leak_canary_test_class_name">assertk.Assert</string>
+</resources>

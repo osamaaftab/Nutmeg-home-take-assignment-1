@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="java.util.List" />
+
+        <import type="com.osamaaftab.nutmeg.domain.model.AlbumModel" />
+
+        <variable
+            name="album"
+            type="com.osamaaftab.nutmeg.domain.model.AlbumModel" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_12sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_15sdp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:contentDescription="@string/app_name"
+                app:image="@{album.thumbNail}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/photo_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/roboto_light"
+                android:maxLines="1"
+                android:padding="@dimen/_2sdp"
+                android:text="@{album.photoTitle}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintLeft_toRightOf="@+id/image"
+
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Photo Title" />
+
+            <TextView
+                android:id="@+id/album_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/roboto_light"
+                android:maxLines="1"
+                android:padding="@dimen/_2sdp"
+                android:text="@{album.title}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toTopOf="@+id/username"
+                app:layout_constraintLeft_toRightOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/photo_title"
+                tools:text="Album Name" />
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/roboto_light"
+                android:maxLines="1"
+                android:padding="@dimen/_2sdp"
+                android:text="@{album.userName}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/album_name"
+                tools:text="Username" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
